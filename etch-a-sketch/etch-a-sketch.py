@@ -1,6 +1,7 @@
 import turtle
 
-pict = turtle.Turtle()
+SCREEN_WIDTH = 450
+SCREEN_HEIGHT = 250
 
 pict = turtle.Turtle()
 pict.speed(10)
@@ -12,7 +13,9 @@ pict.turtlesize(0.25)
 pict.penup()
 pict.goto(-230, -40)
 pict.down()
-pict.forward(450)
+pict.forward(SCREEN_WIDTH)
+pict.left(90)
+pict.forward(SCREEN_HEIGHT)
 
 
 '''
