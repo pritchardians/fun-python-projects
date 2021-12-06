@@ -16,6 +16,10 @@ pict.down()
 pict.forward(SCREEN_WIDTH)
 pict.left(90)
 pict.forward(SCREEN_HEIGHT)
+pict.left(90)
+pict.forward(SCREEN_WIDTH)
+pict.left(90)
+pict.forward(SCREEN_HEIGHT)
 
 
 '''
