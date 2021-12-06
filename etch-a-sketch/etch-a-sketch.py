@@ -32,7 +32,7 @@ pict.width(5)
 
 pict.left(90)
 pict.forward(ETCH_A_SKETCH_WIDTH)
-pict.left(90)
+pict.circle(25, 90)
 pict.forward(ETCH_A_SKETCH_HEIGHT)
 pict.left(90)
 pict.forward(ETCH_A_SKETCH_WIDTH)
