@@ -14,6 +14,7 @@ pict.shape('circle')
 pict.color('red')
 pict.width(3)
 pict.turtlesize(0.25)
+step_size = 3
 
 # Draw inner screen
 pict.penup()
@@ -76,6 +77,47 @@ pict.goto(-200, 200)
 pict.right(90)
 pict.pendown()
 pict.turtlesize(0.1)
+
+
+def left():
+    pict.setheading(180)
+    pict.forward(step_size)
+
+
+def right():
+    pict.setheading(0)
+    pict.forward(step_size)
+
+
+def up():
+    pict.setheading(90)
+    pict.forward(step_size)
+
+
+def down():
+    pict.setheading(270)
+    pict.forward(step_size)
+
+
+def increase_step():
+    global step_size
+    step_size += 10
+
+
+def decrease_step():
+    global step_size
+    step_size -= 10
+    if step_size < 1:
+        step_size = 1
+
+
+turtle.listen()
+turtle.onkey(left, "Left")
+turtle.onkey(right, "Right")
+turtle.onkey(up, "Up")
+turtle.onkey(down, "Down")
+turtle.onkey(increase_step, '8')
+turtle.onkey(decrease_step, '2')
 
 '''
 Make this the last part of the code!
