@@ -68,6 +68,15 @@ pict.color('blue')
 style = ('Arial', 30, 'bold italic')
 pict.write('Etch A Sketch', font=style, align='center')
 
+# Place cursor inside screen
+pict.penup()
+pict.color('black')
+pict.width(1)
+pict.goto(-200, 200)
+pict.right(90)
+pict.pendown()
+pict.turtlesize(0.1)
+
 '''
 Make this the last part of the code!
 '''
