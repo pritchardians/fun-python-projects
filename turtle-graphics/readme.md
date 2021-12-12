@@ -15,7 +15,7 @@ speeds up
 A clock runs for a minute-showing the seconds ticking past
 and on the minute the hour and minute hands are redrawn.
 
-### [Etch A Sketch](03_etch_a_sketch/main.py)
+### [Etch A Sketch](03_etch_a_sketch/main.py )
 Classic Etch A Sketch toy <br>
 Uses a listener to wait for usr input to move the cursor around,
 and to increase or decrease the length of the line each keypress
