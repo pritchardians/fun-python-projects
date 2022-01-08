@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Titillium Web', serif;
+    background-image: linear-gradient(to bottom right, rgb(173, 255, 47), rgb(0, 0, 255));
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+p {
+    text-align: center;
+    margin: 10px;
+    padding: 0;
+}
+
+.main-content {
+    color: rgba(255, 255, 255, .75);
+    width: 60%;
+    margin-top: 20px;
+}
+
+
+.container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 500px;
+
+    margin: 20px 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+h2 {
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+.content-box {
+    margin-top: 25px;
+    display: inline-block;
+    width: 40vw;
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    font-size: large;
+    color: blue;
+    border: #090b81 solid 2px;
+    border-radius: 15px;
+    background-color: #b9d8f6;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3), inset 0 -3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.content-box {
+    font-family: 'Spline', sans-serif;
+    padding-bottom: 10px;
+}
+
+.content-box:hover {
+    transform: translate(1.2);
+}
+
+.code-box {
+    background-color: black;
+    color: ivory;
+    text-align: left;
+    font-family: 'Source Code Pro', sans-serif;
+    padding: 10px;
+    margin: 10px;
+    border: #777777 solid 5px;
+}
+
+.tab {
+    padding-left: 20px;
+}
+
+.meta {
+    font-family: "Metamorphous", serif;
+}
+
+
+.project-box ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+.concept {
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+/* Nav Bar */
+.navbar {
+    position: fixed;
+    width: 98%;
+    padding: 10px 10px 10px 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    border-bottom: solid 5px rgba(255, 255, 255, .2);
+}
+
+.nav-logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.navbar .nav-header {
+    display: inline;
+}
+
+.navbar .nav-header .nav-logo {
+    display: inline-block;
+}
+
+.navbar .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+}
+
+.navbar .nav-links .loginBtn {
+    border: rgba(255, 255, 255, .5) solid 2px;
+    padding: 5px 15px;
+    border-radius: 10px;
+    margin: 3px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: transparent;
+    color: rgba(255, 255, 255, .6);;
+}
+
+.navbar .nav-links .loginBtn:hover {
+    color: white;
+    border: rgba(255, 255, 255, 1) solid 2px;
+    /*border-radius: 14px;*/
+}
+
+.navbar .nav-links a {
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 4px;
+    text-decoration: none;
+    font-weight: 550;
+    color: rgba(255, 255, 255, .6);
+}
+
+/* Hover effects */
+.navbar .nav-links a:hover {
+    color: white;
+    border-bottom: solid rgba(255, 255, 255, .4) 2px;
+    border-left: solid rgba(255, 255, 255, .8) 2px;
+    border-radius: 10px;
+    transition: all 0.1s ease-in;
+}
+
+
+/* responsive navbar toggle button */
+.navbar #nav-check, .navbar .nav-btn {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .navbar {
+        border: none;
+    }
+
+    .nav-logo a {
+        display: none;
+    }
+
+    .navbar .nav-btn {
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+
+    .navbar .nav-btn label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 15px 0 0 10px;
+    }
+
+    .navbar .nav-btn label span {
+        display: block;
+        height: 10px;
+        width: 25px;
+        border-top: 3px solid #eee;
+    }
+
+    .navbar .nav-btn label:hover, .navbar #nav-check:checked ~ .nav-btn label {
+        background-color: rgba(9, 14, 90, .1);
+    }
+
+    .navbar .nav-links {
+        position: absolute;
+        display: block;
+        text-align: center;
+        background-color: rgba(9, 14, 90, .1);
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 55px;
+        right: 0px;
+    }
+
+    .navbar .nav-links a {
+        display: block;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    /* when nav toggle button not checked */
+    .navbar #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+    }
+
+    /* when nav toggle button is checked */
+    .navbar #nav-check:checked ~ .nav-links {
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    .navbar .nav-links .loginBtn {
+        padding: 10px 40px;
+        margin: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(9, 14, 90);
+    }
+}
+
+
+/* Signup styling  */
+
+
+:root {
+    --success-colour: #2ecc71;
+    --error-colour: #e74c3c;
+}
+
+
+#form {
+    padding: 30px 40px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label {
+    color: #777;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.form-control input:focus {
+    outline: 0;
+    border-color: #777;
+}
+
+.form-control.success input {
+    border-color: var(--success-colour);
+}
+
+.form-control.error input {
+    border-color: var(--error-colour);
+}
+
+.form-control small {
+    color: var(--error-colour);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.form-control.error small {
+    visibility: visible;
+}
+
+.submit {
+    cursor: pointer;
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.signBut {
+    border: none;
+    background: transparent;
+    font-size: 18px;
+}
+
+.signBut a {
+    text-decoration: none;
+    color: blue;
+}
+
+.signInUpActive {
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.signInUpInactive {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.hideMe {
+    display: none;
+}
+
+.showMe {
+    display: contents;
+}
+
+.inactive {
+    display: none;
+}
+
+.footer {
+    border: rgba(255, 255, 255, .5) solid 2px;
+    border-radius: 100px;
+    color: rgb(205, 238, 137);
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding: 10px 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer a {
+    color: rgba(255, 255, 255, .75);
+    text-decoration: none;
+    border-bottom: solid rgba(255, 255, 255, .75) 1px;
+}
+
+.footer a:hover {
+    color: rgba(255, 255, 255, 1);
+    border-bottom: solid rgba(255, 255, 255, 1) 2px;
+}
+
+
+.btn {
+    background-color: rgba(25, 118, 210, 0.85);
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+    margin-top: 25px;
+    border-radius: 5rem;
+    border: transparent;
+    box-shadow: 0 5px 1rem rgba(0, 0, 0, .6);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background-color: rgba(25, 118, 210, 0.85);
+    box-shadow: 0 5px 1.5rem rgba(0, 0, 0, .3);
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+
+
+
+

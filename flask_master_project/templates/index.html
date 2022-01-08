@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Flask Projects - Home</h1>
+<p>Experiments in using Python and Flask to interact with humans
+    through websites instead of the clunky command line interface.</p>
+<div class="content-box project-box">
+    <p>The following project list uses <span class="concept">Flask Template Control Flow</span> to
+        create a list on the fly.
+    <ul>
+        {% for project in project_list %}
+        <li>{{project}}</li>
+        {% endfor %}
+    </ul>
+    </p>
+</div>
+{% endblock %}

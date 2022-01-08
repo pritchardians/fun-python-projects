@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>A couple of nonsense sentences</h2>
+<form action="{{url_for('nonsense')}}">
+    <input type="submit" value="Get Me More Nonsense!" class="btn">
+</form>
+<div class="content-box meta">
+    {{ first }}
+    </br><br>
+    {{ second }}
+</div>
+{% endblock %}

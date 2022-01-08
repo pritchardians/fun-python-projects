@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>Signup Page</h2>
+<div class="container">
+    <form id="form">
+        <h2 class="signInUp">
+            <button class="signInUpInactive signBut" id="signIn">
+                <a href="#">Sign In</a>
+            </button>
+            |
+            <button class="signInUpActive signBut" id="signUp">
+                <a href="#">Sign Up</a>
+            </button>
+        </h2>
+        <div class="form-control">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter Username" />
+            <small>Error Message</small>
+        </div>
+        <div class="form-control">
+            <label for="passphrase">Pass Phrase</label>
+            <input
+                    type="password"
+                    id="passphrase"
+                    placeholder="Enter Pass Phrase"
+            />
+            <small>Error Message</small>
+        </div>
+        <div id="hideOrShow">
+            <div class="form-control">
+                <label for="passphrase2">Confirm Pass Phrase</label>
+                <input
+                        type="password"
+                        id="passphrase2"
+                        placeholder="Confirm Pass Phrase"
+                />
+                <small>Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter Email" />
+                <small>Error Message</small>
+            </div>
+        </div>
+        <button class="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Python - Some Geeky Stuff</h1>
+<p>This is where we play with some clever Python to show the power of this wee language</p>
+<h2>Comprehensions</h2>
+<p>Comprehensions allow us to construct one sequence from another. </p>
+<p>They use the `for` keyword to spin through the original sequence</p>
+<h3>Simple Example</h3>
+<ul>
+    <li>First we convert a string to a list with `split()`</li>
+    <li>Then we use the `for` keyword to spin through the list</li>
+</ul>
+<div class="code-box">
+    sentence = 'look before you spoil the broth'</br>
+    words = sentence.split()</br>
+    for word in words:</br>
+    <div class="tab">
+        print(word)
+    </div>
+</div>
+<h3>Single Line - more complex</h3>
+<p>The example below does all the work on 1 line</p>
+<ul>
+    <li>Create a list of vowels to use in the search</li>
+    <li>Use the `for` keyword to spin through the letters in the input string</li>
+    <li>use lower() to convert each letter to lower case for the case-sensitive search</li>
+    <li>The `if` clause filters out the letters we return-in this case only returning non-vowels letters</li>
+    <li>We don't want a list of letters. we want a boolean True/False</li>
+    <ul>
+        <li>`True` if there are only vowels in the input string</li>
+        <li>`False` if any of the letters in the input string are not vowels</li>
+    </ul>
+    <li>We make this decision by testing the length of the result string.</br>
+        If it's 0, the comprehension didn't return
+        any letters, so we must have only vowels!</li>
+</ul>
+<div class="code-box">
+    VOWELS = 'aeiou'</br>
+    </br>
+    </br>
+    def contains_only_vowels(input_str):</br>
+    """Receives input string and checks if all chars are</br>
+    VOWELS. Match is case insensitive."""</br>
+    <div class="tab">
+        return len([letter for letter in input_str.lower() if letter not in VOWELS]) == 0
+    </div>
+    </br>
+</div>
+
+
+{% endblock %}

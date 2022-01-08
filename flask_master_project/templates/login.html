@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>Login</h2>
+<div class="container">
+    <form id="form" action="{{url_for('thankyou')}}">
+        <div class="form-control">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter Username" name="username" />
+        </div>
+        <div class="form-control">
+            <label for="passphrase">Pass Phrase</label>
+            <input
+                    type="password"
+                    id="passphrase"
+                    placeholder="Enter Pass Phrase"
+                    name="passphrase"
+            />
+        </div>
+        <button class="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}
