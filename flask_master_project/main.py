@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request
 import random
+import logging
 
 app = Flask(__name__)
+logger = logging.getLogger('werkzeug')
 
 project_list = ['Nonsense Sentences', 'Proverbs', 'Geeky Stuff', 'Sign Up Form']
+topic_list = ['Comprehensions']
 sentence_structure = 'art adj noun adv verb art adj noun'
 proverb_structure = ['a stitch in time saves nine', 'look before you leap']
 nouns = ['man', 'dog', 'human', 'vampire', 'bat', 'thief', 'monster', 'fish', 'bird', 'traffic warden', 'twin',
@@ -93,12 +96,16 @@ def login():
 
 @app.route('/geekout')
 def geekout():
-    return render_template('geekout.html')
+    return render_template('geekout.html', topic_list=topic_list)
 
 
 @app.route('/thankyou')
 def thankyou():
     username = request.args.get('username')
+    logger.info("In thankyou route. Username is:")
+    logger.info(username)
+    if username == '':
+        username = 'Guest'
     return render_template('thankyou.html', username=username)
 
 

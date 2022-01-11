@@ -55,4 +55,4 @@ I set up a [master project](./flask_master_project) to house several web pages a
 I'll be adding significantly as this will allow me to accept user interaction in a friendly
 manner, so I can house many other projects here.</br>
 Run the [main.py](./flask_master_project/main.py) file to get a link to a web page on your local machine.</br>
-`ToDo:Split the code into modules so it's tidier` 
+`to_do:Split the code into modules so it's tidier` 

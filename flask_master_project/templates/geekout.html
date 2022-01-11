@@ -4,7 +4,17 @@
 {% block content %}
 <h1>Python - Some Geeky Stuff</h1>
 <p>This is where we play with some clever Python to show the power of this wee language</p>
-<h2>Comprehensions</h2>
+<div class="content-box">
+    <h2>Topics</h2>
+    <p>The following topic list uses <span class="concept">Flask Template Control Flow</span> to
+        create a list on the fly.
+    {% for topic in topic_list %}
+    <a href="#{{topic}}">{{topic}}</a></br>
+    {% endfor %}
+</div>
+
+
+<h2 id="Comprehensions">Comprehensions</h2>
 <p>Comprehensions allow us to construct one sequence from another. </p>
 <p>They use the `for` keyword to spin through the original sequence</p>
 <h3>Simple Example</h3>
@@ -34,7 +44,8 @@
     </ul>
     <li>We make this decision by testing the length of the result string.</br>
         If it's 0, the comprehension didn't return
-        any letters, so we must have only vowels!</li>
+        any letters, so we must have only vowels!
+    </li>
 </ul>
 <div class="code-box">
     VOWELS = 'aeiou'</br>
