@@ -57,7 +57,7 @@ where_on_earth_map.add_child(folium.LayerControl())
 web_page_name = 'where_on_earth.html'
 where_on_earth_map.save(web_page_name)
 _ = input('Press <ENTER> to see the map')
-webbrowser.open(web_page_name, new=2)
+# webbrowser.open(web_page_name, new=2)
 
 for num in range(0, 3):
     clue.give_clue(num, findme_clue)

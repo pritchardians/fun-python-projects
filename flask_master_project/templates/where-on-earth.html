@@ -1,0 +1,66 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Where On Earth?</h1>
+<p>Welcome to the 'Where On Earth' game.</p>
+<p>
+  I will give you the description of a place, and draw a map with several
+  markers on it. Choose the marker you think locates the place I describe.
+</p>
+<h4>Yes - it really is that simple!</h4>
+<p><a href="#clues">Here are clues</a> if you wish to reveal them.</p>
+<div class="content-box">
+  <h2>{{title}}</h2>
+  {{description}}
+</div>
+<div class="content-box warning">
+  <h2>Note</h2>
+  <p>
+    The map will open in the same browser window. Press 'back' on your browser
+    to return here.
+  </p>
+  <form action="{{url_for('map', _external=True)}}">
+    <input type="submit" value="Show the map" class="btn" />
+  </form>
+</div>
+
+<div class="card-row" id="clues">
+  <div class="flip-card feature-item">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h1>Clue 1</h1>
+        <h2>Hover on this card <br />to see the first clue!</h2>
+      </div>
+      <div class="flip-card-back">
+        <h1>Clue 1</h1>
+        <h3>{{clue_1}}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card feature-item">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h1>Clue 2</h1>
+        <h2>Hover on this card <br />to see the second clue!</h2>
+      </div>
+      <div class="flip-card-back">
+        <h1>Clue 2</h1>
+        <h3>{{clue_2}}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card feature-item">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <h1>Clue 3</h1>
+        <h2>Hover on this card <br />to see the third clue!</h2>
+      </div>
+      <div class="flip-card-back">
+        <h1>Clue 3</h1>
+        <h3>{{clue_3}}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

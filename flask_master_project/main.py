@@ -1,9 +1,13 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import random
 import logging
+import folium
+from funs import where_on_earth as woe
 
 app = Flask(__name__)
 logger = logging.getLogger('werkzeug')
+loc_lat = 0
+loc_long = 0
 
 project_list = ['Nonsense Sentences', 'Proverbs', 'Geeky Stuff', 'Sign Up Form']
 topic_list = ['Comprehensions']
@@ -107,6 +111,46 @@ def thankyou():
     if username == '':
         username = 'Guest'
     return render_template('thankyou.html', username=username)
+
+
+@app.route('/where-on-earth')
+def where_on_earth():
+    location_details = woe.choose_location()
+    global loc_lat
+    global loc_long
+    global loc_title
+    (loc_lat, loc_long, loc_title, loc_description, loc_clues) = location_details
+    (loc_clue_1, loc_clue_2, loc_clue_3) = loc_clues
+    return render_template('where-on-earth.html',
+                           description=loc_description,
+                           title=loc_title,
+                           clue_1=loc_clue_1,
+                           clue_2=loc_clue_2,
+                           clue_3=loc_clue_3
+                           )
+
+
+@app.route('/map')
+def map():
+    start_coords = (0, 0)
+    fg_base = folium.FeatureGroup(name='Where On Earth?')
+    fg_borders = folium.FeatureGroup(name='Borders')
+    fg_base.add_child(
+        folium.Marker(location=[loc_lat, loc_long], popup='<strong>You found me!</strong> <br> <br>' + loc_title
+                      + '</br></br> Press the \'back\' button on your browser',
+                      icon=folium.Icon(color='cadetblue')))
+    for _ in range(0, 3):
+        fg_base.add_child(folium.Marker(location=[random.randint(-90, 90), random.randint(-180, 180)],
+                                        popup='<strong>Try again.</strong>',
+                                        icon=folium.Icon(color='cadetblue')))
+
+    where_on_earth_map = folium.Map(width=1000, height=650, location=start_coords, zoom_start=2,
+                                    tiles='Stamen Terrain')
+    where_on_earth_map.add_child(fg_base)
+    where_on_earth_map.add_child(fg_borders)
+    where_on_earth_map.add_child(folium.LayerControl())
+    where_on_earth_map.save('templates/map.html')
+    return render_template('map.html')
 
 
 @app.errorhandler(404)
