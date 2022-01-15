@@ -5,16 +5,15 @@
   will add validity checking on the fields
 </p>
 <div class="container">
-  <form id="form">
-    <h2 class="signInUp">
-      <button class="signInUpInactive signBut" id="signIn">
-        <a href="{{url_for('signin')}}">Sign In</a>
+  <form class="form">
+    <div class="signInUpBox">
+      <button class="submit submit-narrow">
+        <a href="{{url_for('signin')}}"> Sign In </a>
       </button>
-      |
-      <button class="signInUpActive signBut" id="signUp">
-        <a href="{{url_for('signup')}}">Sign Up</a>
+      <button class="submit submit-narrow submit-ghost" disabled>
+        Sign Up
       </button>
-    </h2>
+    </div>
     <div class="form-control">
       <label for="username">Username</label>
       <input type="text" id="username" placeholder="Enter Username" />

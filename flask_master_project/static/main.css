@@ -5,6 +5,16 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap");
 
+/* Site styling variables */
+/* Use this syntax to use variables -
+```var(--variable-name)```
+*/
+:root {
+  --success-colour: #2ecc71;
+  --error-colour: #e74c3c;
+  --button-blue: #3498db;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -244,13 +254,6 @@ h2 {
   }
 }
 
-/* Signup styling  */
-
-:root {
-  --success-colour: #2ecc71;
-  --error-colour: #e74c3c;
-}
-
 .form {
   padding: 30px 40px;
 }
@@ -303,8 +306,8 @@ h2 {
 
 .submit {
   cursor: pointer;
-  background-color: #3498db;
-  border: 2px solid #3498db;
+  background-color: var(--button-blue);
+  border: 2px solid var(--button-blue);
   border-radius: 4px;
   color: #fff;
   display: block;
@@ -318,7 +321,8 @@ h2 {
   display: flex;
   padding: 0;
   margin-bottom: 25px;
-  border: 5px #3498db solid;
+  border: 5px var(--button-blue) solid;
+  border-radius: 5px;
 }
 
 .submit-narrow {
@@ -337,7 +341,6 @@ h2 {
   color: rgba(52, 152, 219, 0.2);
   background-color: transparent;
   text-decoration: none;
-  border-radius: 0;
 }
 
 .hideMe {
