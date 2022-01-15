@@ -9,16 +9,16 @@
   I totally ignore the passphrase. I will build this out in a future sprint.
 </p>
 <div class="container">
-  <h2 class="signInUp">
-    <button class="signInUpInactive signBut" id="signIn">
-      <a href="{{url_for('login')}}">Sign In</a>
-    </button>
-    |
-    <button class="signInUpActive signBut" id="signUp">
-      <a href="{{url_for('signup')}}">Sign Up</a>
-    </button>
-  </h2>
-  <form id="form" action="{{url_for('thankyou')}}">
+  <form class="form">
+    <div class="signInUpBox">
+      <button class="submit submit-narrow submit-ghost" disabled>
+        Sign In
+      </button>
+      <button class="submit submit-narrow"> <a href="{{url_for('signup')}}">
+        Sign Up
+      </a></button>
+    </div>
+    <form class="form" action="{{url_for('thankyou')}}">
     <div class="form-control">
       <label for="username">Username</label>
       <input

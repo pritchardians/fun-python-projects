@@ -61,8 +61,6 @@ h2 {
   margin-bottom: 25px;
   display: inline-block;
   width: 40vw;
-  text-align: center;
-  justify-content: center;
   font-size: large;
   color: blue;
   border: #090b81 solid 2px;
@@ -253,7 +251,7 @@ h2 {
   --error-colour: #e74c3c;
 }
 
-#form {
+.form {
   padding: 30px 40px;
 }
 
@@ -316,25 +314,30 @@ h2 {
   width: 100%;
 }
 
-.signBut {
+.signInUpBox {
+  display: flex;
+  padding: 0;
+  margin-bottom: 25px;
+  border: 5px #3498db solid;
+}
+
+.submit-narrow {
   border: none;
-  background: transparent;
-  font-size: 18px;
+  border-radius: 0;
+  margin: 0;
 }
 
-.signBut a {
+.submit-narrow a {
   text-decoration: none;
-  color: blue;
+  color: white;
 }
 
-.signInUpActive {
+.submit-ghost {
+  border: none;
+  color: rgba(52, 152, 219, 0.2);
+  background-color: transparent;
   text-decoration: none;
-  font-size: 12px;
-}
-
-.signInUpInactive {
-  text-decoration: underline;
-  font-weight: bold;
+  border-radius: 0;
 }
 
 .hideMe {
@@ -465,7 +468,8 @@ h2 {
 .card-row {
   margin-top: 2rem;
   display: flex;
-  width: 90%;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .warning {

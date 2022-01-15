@@ -93,9 +93,9 @@ def signup():
     return render_template('signup.html')
 
 
-@app.route('/login')
-def login():
-    return render_template('login.html')
+@app.route('/signin')
+def signin():
+    return render_template('signin.html')
 
 
 @app.route('/geekout')
@@ -137,7 +137,7 @@ def map():
     fg_borders = folium.FeatureGroup(name='Borders')
     fg_base.add_child(
         folium.Marker(location=[loc_lat, loc_long], popup='<strong>You found me!</strong> <br> <br>' + loc_title
-                      + '</br></br> Press the \'back\' button on your browser',
+                      + '</br></br> Press the \'back\' button to return',
                       icon=folium.Icon(color='cadetblue')))
     for _ in range(0, 3):
         fg_base.add_child(folium.Marker(location=[random.randint(-90, 90), random.randint(-180, 180)],
@@ -151,6 +151,7 @@ def map():
     where_on_earth_map.add_child(folium.LayerControl())
     where_on_earth_map.save('templates/map.html')
     return render_template('map.html')
+    # return where_on_earth_map._repr_html_()
 
 
 @app.errorhandler(404)
